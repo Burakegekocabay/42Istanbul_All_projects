@@ -39,19 +39,34 @@ SRC =	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
+BONUS = ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstdelone.c \
+		ft_lstclear.c 
+	
 OBJECTS = $(SRC:.c=.o)
+
+BONUS_OBJECTS = $(BONUS:.c=.o)
+
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
 
+bonus: $(OBJECTS) $(BONUS_OBJECTS)
+
+	$(AR) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
+
 clean:
-	${RM} ${OBJECTS} 
+	${RM} ${OBJECTS} ${BONUS_OBJECTS}
 
 fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
