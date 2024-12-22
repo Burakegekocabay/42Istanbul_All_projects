@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkocabay <bkocabay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: burakegekocabay <burakegekocabay@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:26:38 by bkocabay          #+#    #+#             */
-/*   Updated: 2024/11/16 13:04:37 by bkocabay         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:46:07 by burakegekoc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,25 @@ static int	control(char c, va_list va)
 	counter = 0;
 	if (c == 'c')
 		counter = get_char(va);
-	if (c == 's')
+	else if (c == 's')
 		counter = get_string(va);
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		counter = get_int(va);
-	if (c == 'u')
+	else if (c == 'u')
 		counter = get_unsigned(va);
-	if (c == 'x')
+	else if (c == 'x')
 		counter = get_hex_lower(va);
-	if (c == 'X')
+	else if (c == 'X')
 		counter = get_hex_upper(va);
-	if (c == '%')
+	else if (c == '%')
 		counter = write(1, "%%", 1);
-	if (c == 'p')
+	else if (c == 'p')
 		counter = get_pointer(va);
+	else
+	{
+		counter = write(1, "%%", 1);
+		counter = counter + write(1, &c, 1);
+	}
 	return (counter);
 }
 

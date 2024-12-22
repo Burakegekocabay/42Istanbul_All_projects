@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_hex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkocabay <bkocabay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: burakegekocabay <burakegekocabay@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:33:38 by bkocabay          #+#    #+#             */
-/*   Updated: 2024/11/16 17:24:31 by bkocabay         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:47:44 by burakegekoc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ static int	hex_len(unsigned int n)
 	return (counter);
 }
 
-int	transformer(unsigned long long n, int a)
+static int	transformer(unsigned int n, int a)
 {
 	int		i;
-	char	*hex;
+	char	hex[11];
 	int		len;
 
-	hex = malloc(hex_len(n) + 1);
 	if (n == 0)
 		return (write(1, "0", 1));
 	len = hex_len(n);
@@ -52,22 +51,21 @@ int	transformer(unsigned long long n, int a)
 	i = 0;
 	while (hex[i] != '\0')
 		write(1, &hex[i++], 1);
-	free(hex);
 	return (len);
 }
 
 int	get_hex_lower(va_list va)
 {
-	unsigned long	n;
+	unsigned int	n;
 
-	n = va_arg(va, unsigned long);
+	n = va_arg(va, unsigned int);
 	return (transformer(n, 0));
 }
 
 int	get_hex_upper(va_list va)
 {
-	unsigned long	n;
+	unsigned int	n;
 
-	n = va_arg(va, unsigned long);
+	n = va_arg(va, unsigned int);
 	return (transformer(n, -32));
 }

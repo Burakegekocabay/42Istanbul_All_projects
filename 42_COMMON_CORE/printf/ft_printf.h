@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkocabay <bkocabay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: burakegekocabay <burakegekocabay@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:47:51 by bkocabay          #+#    #+#             */
-/*   Updated: 2024/11/16 17:05:20 by bkocabay         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:46:50 by burakegekoc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

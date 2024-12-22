@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_pointer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkocabay <bkocabay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: burakegekocabay <burakegekocabay@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 14:07:41 by bkocabay          #+#    #+#             */
-/*   Updated: 2024/11/16 17:29:16 by bkocabay         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:49:15 by burakegekoc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ static int	transformer2(unsigned long long n, int a)
 {
 	int		i;
 	int		len;
-	char	*hex;
+	char	hex[30];
 
-	hex = malloc(hex_len2(n) + 1);
 	if (n == 0)
 		return (write(1, "0", 1));
 	len = hex_len2(n);
@@ -52,7 +51,6 @@ static int	transformer2(unsigned long long n, int a)
 	i = 0;
 	while (hex[i] != '\0')
 		write(1, &hex[i++], 1);
-	free(hex);
 	return (len);
 }
 
@@ -66,3 +64,4 @@ int	get_pointer(va_list va)
 	write(1, "0x", 2);
 	return (2 + transformer2(n, 0));
 }
+

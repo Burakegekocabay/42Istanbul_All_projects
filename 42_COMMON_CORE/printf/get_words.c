@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_words.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkocabay <bkocabay@student.42.fr>          +#+  +:+       +#+        */
+/*   By: burakegekocabay <burakegekocabay@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:41:37 by bkocabay          #+#    #+#             */
-/*   Updated: 2024/11/16 13:02:53 by bkocabay         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:49:57 by burakegekoc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
